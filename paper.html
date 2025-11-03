@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For Authors — ICET 2026</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* === TRACK SECTION STYLING === */
+    .tracks-section {
+      padding: 80px 0;
+      text-align: center;
+    }
+
+    .tracks-section h2.section-title {
+      font-size: 2rem;
+      margin-bottom: 40px;
+      color: var(--primary-color, #222);
+      font-weight: 700;
+    }
+
+    .track-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      justify-content: center;
+      align-items: stretch;
+    }
+
+    .track-card {
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .track-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .track-card img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .track-card h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #333;
+      padding: 15px 20px;
+      background: #f8f9fa;
+    }
+
+    /* === MODAL STYLING === */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      padding-top: 60px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow-y: auto;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    .modal-content {
+      background-color: #fff;
+      margin: auto;
+      border-radius: 10px;
+      padding: 30px;
+      max-width: 800px;
+      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+      animation: fadeIn 0.3s ease;
+    }
+
+    .modal-content img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+    .modal-content h2 {
+      color: #111;
+      margin-bottom: 10px;
+      font-size: 1.5rem;
+    }
+
+    .modal-content h3 {
+      margin-top: 20px;
+      font-size: 1.1rem;
+      color: #333;
+    }
+
+    .modal-content ul {
+      text-align: left;
+      padding-left: 20px;
+      margin-top: 10px;
+    }
+
+    .close-btn {
+      color: #555;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .close-btn:hover {
+      color: #000;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="top-header">
+    <div class="container header-container">
+      <div class="logo"><a href="index.html"><img src="assets/logo.png" alt="Conference Logo"></a></div>
+      <nav class="navbar">
+        <ul class="menu">
+          <li><a href="index.html">Home</a></li>
+
+          <li class="dropdown">
+            <a href="#" class="no-click">Committee</a>
+            <ul class="dropdown-menu">
+              <li><a href="OC.html">Organizing Committee</a></li>
+              <li><a href="international.html">International Committee</a></li>
+              <li><a href="national.html">National Committee</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+          <a href="#" class="no-click">Authors</a>
+          <ul class="dropdown-menu">
+            <li><a href="paper.html">Call For Paper</a></li>
+            <li><a href="submission.html">Paper Submission</a></li>
+          </ul>
+        </li>
+          <li><a href="dates.html">Important Dates</a></li>
+          <li><a href="register.html">Register</a></li>
+          <li><a href="publication.html">Publication</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="hamburger" id="hamburger-menu" aria-label="Open Menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <h1 class="reveal">Tracks</h1>
+      </div>
+    </section>
+
+    <section class="tracks-section container reveal">
+      <h2 class="section-title">Conference Tracks</h2>
+
+      <div class="track-grid">
+        <!-- Track 1 -->
+        <div class="track-card" id="track1-card">
+          <img src="track1.jpg" alt="Track 1" />
+          <h3>TOPIC HERE</h3>
+        </div>
+
+        <!-- Track 2 -->
+        <div class="track-card" id="track2-card">
+          <img src="track1.jpg" alt="Track 2" />
+          <h3>TOPICE HERE</h3>
+        </div>
+      </div>
+    </section>
+
+    <!-- Track 1 Modal -->
+    <div id="track1-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn" data-close="track1-modal">&times;</span>
+        <h2>SMART SYSTEMS AND EMERGING TECHNOLOGIES</h2>
+        <img src="assets/track1.jpg" alt="Track 1">
+
+        <h3>OBJECTIVE</h3>
+        <p>
+          This track explores advancements in intelligent systems,
+          cyber-physical networks, and AI-driven innovations shaping the digital
+          future. It promotes research on adaptive technologies bridging
+          academia and industry for automation, efficiency, and security.
+        </p>
+
+        <h3>TOPICS</h3>
+        <ul>
+          <li>Artificial Intelligence and Machine Learning</li>
+          <li>IoT and Smart Infrastructure</li>
+          <li>Cyber-Physical Systems</li>
+          <li>Advanced Robotics and Automation</li>
+          <li>Quantum Computing</li>
+          <li>Network Security and Cloud Technologies</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Track 2 Modal -->
+    <div id="track2-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn" data-close="track2-modal">&times;</span>
+        <h2>SUSTAINABLE TECHNOLOGIES AND GREEN INNOVATIONS</h2>
+        <img src="assets/track2.jpg" alt="Track 2">
+
+        <h3>OBJECTIVE</h3>
+        <p>
+          This track focuses on innovations that support environmental
+          sustainability, renewable energy, and resource optimization for a
+          cleaner, greener world through technology and research.
+        </p>
+
+        <h3>TOPICS</h3>
+        <ul>
+          <li>Renewable Energy Systems</li>
+          <li>Green Manufacturing</li>
+          <li>Climate Change Modelling</li>
+          <li>Water and Waste Management</li>
+          <li>Environmental Data Analytics</li>
+          <li>Biotechnology for Sustainable Solutions</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+<footer>
+  <div class="container">
+    <p>&copy; <span id="year"></span> ICET 2026 | All rights reserved</p>
+  </div>
+</footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Auto year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Track modal JS
+    const openModal = (id) => (document.getElementById(id).style.display = "block");
+    const closeModal = (id) => (document.getElementById(id).style.display = "none");
+
+    document.getElementById("track1-card").addEventListener("click", () => openModal("track1-modal"));
+    document.getElementById("track2-card").addEventListener("click", () => openModal("track2-modal"));
+
+    document.querySelectorAll(".close-btn").forEach((btn) => {
+      btn.addEventListener("click", () => closeModal(btn.getAttribute("data-close")));
+    });
+
+    window.addEventListener("click", (e) => {
+      if (e.target.classList.contains("modal")) e.target.style.display = "none";
+    });
+  </script>
+</body>
+</html>

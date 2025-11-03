@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Paper Submission — ICET 2026</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Center the submission section content */
+    .submission-section {
+      text-align: center;
+      padding: 80px 0;
+    }
+
+    .submission-section img {
+      display: block;
+      margin: 20px auto;
+      max-width: 200px;
+    }
+
+    .submission-section .cmt-link a {
+      display: inline-block;
+      margin-top: 15px;
+      font-weight: 600;
+      color: var(--accent-color, #d4af37);
+      text-decoration: none;
+      word-break: break-word;
+    }
+
+    .submission-section .cmt-link a:hover {
+      color: var(--primary-color, #0a2e5c);
+    }
+
+    .payment-details, .review-process {
+      text-align: left;
+      max-width: 900px;
+      margin: 40px auto;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .payment-details ul, .review-process ol {
+      margin-left: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="top-header">
+    <div class="container header-container">
+      <div class="logo"><a href="index.html"><img src="assets/logo.png" alt="Conference Logo"></a></div>
+      <nav class="navbar">
+        <ul class="menu">
+          <li><a href="index.html">Home</a></li>
+          <li class="dropdown">
+            <a href="#" class="no-click">Committee</a>
+            <ul class="dropdown-menu">
+              <li><a href="OC.html">Organizing Committee</a></li>
+              <li><a href="international.html">International Committee</a></li>
+              <li><a href="national.html">National Committee</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="no-click">Authors</a>
+            <ul class="dropdown-menu">
+              <li><a href="paper.html">Call For Paper</a></li>
+              <li><a href="submission.html">Paper Submission</a></li>
+            </ul>
+          </li>
+          <li><a href="dates.html">Important Dates</a></li>
+          <li><a href="register.html">Register</a></li>
+          <li><a href="publication.html">Publication</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="hamburger" id="hamburger-menu" aria-label="Open Menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <h1 class="reveal">Paper Submission</h1>
+      </div>
+    </section>
+
+    <!-- Submission Section -->
+    <section class="submission-section container reveal">
+      <h2>Paper Submission</h2>
+      <p>Submissions of high quality papers in scope of the conference are handled only through the CMT website at:</p>
+      <img src="assets/cmtlogo.png" alt="CMT Platform">
+      <div class="cmt-link">
+        <a href="https://cmt3.research.microsoft.com/ICONIC2026/Submission/Index" target="_blank">https://cmt3.research.microsoft.com/ICONIC2026/Submission/Index</a>
+      </div>
+    </section>
+
+    <!-- Payment Details -->
+    <!--<section class="payment-details reveal">
+      <h2>Payment Details</h2>
+      <p>For Article (Max 25 pages):</p>
+      <ul>
+        <li>1st time: Rs. 300/-</li>
+        <li>2nd time: Rs. 500/-</li>
+        <li>3rd time: Rs. 700/-</li>
+      </ul>
+      <p><strong>Requisition Form:</strong> <a href="assets/requisition_form.pdf" target="_blank">Click here to download the Requisition form</a></p>
+      <p>Soft copy of the complete document/paper should be sent through mail id: <a href="mailto:originalitychk@panimalar.ac.in">originalitychk@panimalar.ac.in</a> with payment proof and Requisition form.</p>
+    </section>-->
+
+    <!-- Review Process -->
+    <section class="review-process reveal">
+      <h2>Review Process</h2>
+      <ol>
+        <li>The submissions are generally reviewed for relevance with the conference scope, novelty against current state of the art, significance of the research contribution and English language.</li>
+        <li>All submitted papers will be checked for plagiarism report using Turnitin. If the paper contains more than 15% plagiarism, the review process will not be carried.</li>
+        <li>IConIC research papers are reviewed using a Single-blind review process managed through CMT. Each paper is reviewed independently by two reviewers, and assigned reviewers submit their anonymous reviews through CMT.</li>
+        <li>IConIC TPC then select the papers for conference proceeding based on reviewers' scores and comments.</li>
+      </ol>
+    </section>
+  </main>
+
+  <!-- Footer -->
+ <footer>
+  <div class="container">
+    <p>&copy; <span id="year"></span> ICET 2026 | All rights reserved</p>
+  </div>
+</footer>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+  <script>
+    // Auto year
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us — ICET 2026</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        /* Contact grid layout */
+        .contact-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 40px;
+        }
+        .contact-info {
+            flex: 1 1 45%;
+            min-width: 300px;
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .contact-info h3 {
+            margin-bottom: 20px;
+        }
+        .contact-info p {
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+        .map-container {
+            flex: 1 1 50%;
+            min-width: 300px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            min-height: 350px;
+            border: 0;
+        }
+        @media (max-width: 768px) {
+            .contact-grid {
+                flex-direction: column;
+            }
+            .map-container {
+                min-height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="top-header">
+        <div class="container header-container">
+            <div class="logo"><a href="index.html"><img src="assets/logo.png" alt="Conference Logo"></a></div>
+            <nav class="navbar">
+                <ul class="menu">
+                    <li><a href="index.html">Home</a></li>
+
+                    <!-- Dropdown for Committee -->
+                    <li class="dropdown">
+                        <a href="#" class="no-click">Committee</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="OC.html">Organizing Committee</a></li>
+                            <li><a href="international.html">International Committee</a></li>
+                            <li><a href="national.html">National Committee</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                      <a href="#" class="no-click">Authors</a>
+                      <ul class="dropdown-menu">
+                        <li><a href="paper.html">Call For Paper</a></li>
+                        <li><a href="submission.html">Paper Submission</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="dates.html">Important Dates</a></li>
+                    <li><a href="register.html">Register</a></li>
+                    <li><a href="publication.html">Publication</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="hamburger" id="hamburger-menu" aria-label="Open Menu"><span></span><span></span><span></span></button>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1 class="reveal">Contact Us</h1>
+            </div>
+        </section>
+
+        <section class="container reveal">
+            <div class="contact-grid">
+
+                <!-- Contact Info on the Left -->
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+
+                    <p><strong>Institute Address:</strong><br>
+                    Mizoram University,  
+                    Computer Engineering Department,  
+                    Aizawl, Mizoram, India</p>
+
+                    <p><strong>Conference Website:</strong><br>
+                    <a href="https://www.pecteam.co.in" target="_blank">www.pecteam.co.in</a></p>
+
+                    <p><strong>Institution Website:</strong><br>
+                    <a href="https://www.panimalar.ac.in" target="_blank">www.panimalar.ac.in</a></p>
+
+                    <p><strong>Telephone:</strong> +91- 044 – 2649 0404<br>
+                    <strong>Mobile:</strong> +91- 72001 91195</p>
+
+                    <p><strong>Contact Convener:</strong><br>
+                    Prof. S. Vimala / +91 7200191195 / 7395978385<br>
+                    Contact Time: After 6PM - 6AM (IST)<br>
+                    E-mail: <a href="mailto:pecteam@panimalar.ac.in">pecteam@panimalar.ac.in</a>, <a href="mailto:peciconic2k26@gmail.com">peciconic2k26@gmail.com</a></p>
+                </div>
+
+                <!-- Map on the Right -->
+                <div class="map-container">
+                    <iframe 
+                        src="https://www.google.com/maps?q=Computer+Engineering+Department,+Mizoram+University,+Aizawl&output=embed" 
+                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+<footer>
+  <div class="container">
+    <p>&copy; <span id="year"></span> ICET 2026 | All rights reserved</p>
+  </div>
+</footer>
+
+    <script>
+        // Update year in footer automatically
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
