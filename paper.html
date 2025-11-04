@@ -81,9 +81,14 @@
     }
 
     .modal-content img {
+      display: block;
       width: 100%;
+      max-width: 600px;   /* limits image width */
+      height: 300px;      /* fixed height for consistent layout */
+      object-fit: cover;  /* keeps image proportion visually appealing */
       border-radius: 8px;
-      margin-bottom: 20px;
+      margin: 0 auto 20px auto; /* centers image with bottom spacing */
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* subtle professional touch */
     }
 
     .modal-content h2 {
@@ -177,13 +182,13 @@
       <div class="track-grid">
         <!-- Track 1 -->
         <div class="track-card" id="track1-card">
-          <img src="track1.jpg" alt="Track 1" />
+          <img src="assets/track1.jpg" alt="Track 1" />
           <h3>Networking, Communication, and Cybersecurity</h3>
         </div>
 
         <!-- Track 2 -->
         <div class="track-card" id="track2-card">
-          <img src="track1.jpg" alt="Track 2" />
+          <img src="assets/track2.jpg" alt="Track 2" />
           <h3>Intelligent Computing and Data Technologies</h3>
         </div>
       </div>
@@ -194,7 +199,7 @@
       <div class="modal-content">
         <span class="close-btn" data-close="track1-modal">&times;</span>
         <h2>NETWORKING, COMMUNICATION, AND CYBERSECURITY</h2>
-        <!--<img src="assets/track1.jpg" alt="Track 1">-->
+        <img src="assets/track1.jpg" alt="Track 1">
 
         <h3>OBJECTIVE</h3>
         <p>
@@ -219,7 +224,7 @@
       <div class="modal-content">
         <span class="close-btn" data-close="track2-modal">&times;</span>
         <h2>INTELLIGENT COMPUTING AND DATA TECHNOLOGIES</h2>
-        <!--<img src="assets/track2.jpg" alt="Track 2">-->
+        <img src="assets/track2.jpg" alt="Track 2">
 
         <h3>OBJECTIVE</h3>
         <p>
