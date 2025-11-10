@@ -258,7 +258,7 @@ ul {
 
 /* --- General Section Styling --- */
 main {
-  padding-top: var(--header-height);
+  padding-top: 140px;
   padding-bottom: 100px;
 }
 
@@ -713,5 +713,6 @@ footer .container {
   display: block;
   margin: 0 auto 10px; /* centers image inside the card */
 }
+
 
 
