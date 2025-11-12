@@ -6,8 +6,6 @@
   <title>iCONNECT — International Conference on Networking and Computing Technologies</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-  
-
     /* ===== HERO SECTION ===== */
     .hero {
       background: linear-gradient(rgba(10, 46, 92, 0.6), rgba(10, 46, 92, 0.6)),
@@ -54,8 +52,19 @@
       font-style: italic;
     }
 
-    /* ===== RESPONSIVE DESIGN ===== */
+    /* ===== BLUE NOTE STYLE ===== */
+    .note {
+      color: #0056b3;
+      font-weight: 500;
+      margin-top: 2rem;
+      padding: 1rem;
+      border-left: 4px solid #0056b3;
+      background: #eaf2ff;
+      border-radius: 8px;
+    }
 
+    /* ===== RESPONSIVE DESIGN ===== */
+    @media (max-width: 768px) {
       .hero {
         min-height: 70vh;
         margin-top: 150px;
@@ -156,6 +165,13 @@
         The Department of Computer Engineering was established in the year 2011 under the School of Engineering and Technology (SET), offering a 4-year Bachelor of Technology (B.Tech) course in Computer Engineering. All classrooms are equipped with ICT facilities. The department has a dedicated state-of-the-art High-Performance Computing Laboratory with a 1:1 computer-student ratio, guided by teachers and technical staff. The primary focus is to impart quality education in the field of Computer Science & Engineering with practical knowledge. Students gain valuable industrial exposure through the industrial programs offered in the course.
       </p>
     </section>
+
+    <!-- Added blue note -->
+    <section class="container reveal">
+      <p class="note">
+        The Microsoft CMT service was used for managing the peer-reviewing process for this conference. This service was provided for free by Microsoft and they bore all expenses, including costs for Azure cloud services as well as for software development and support.
+      </p>
+    </section>
   </main>
 
   <footer>
@@ -170,5 +186,3 @@
   </script>
 </body>
 </html>
-
-
