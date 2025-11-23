@@ -16,29 +16,30 @@
       margin-top: 40px;
     }
 
-    /* Speakers Section Layout */
+    /* Speakers Section */
     .speakers-section {
       padding: 60px 20px;
       text-align: center;
     }
 
-    /* Vertical Speaker List */
+    /* ---------------------- Speaker Grid (2 columns) ---------------------- */
     .speaker-list {
-      max-width: 750px;
-      margin: auto;
-      margin-top: 40px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); 
+      gap: 25px;
+      max-width: 1100px;
+      margin: 40px auto 0;
+      justify-items: center;
     }
 
     .speaker-item {
-      display: flex;
-      align-items: center;
-      gap: 25px;
-      margin-bottom: 40px;
       background: #ffffff;
-      padding: 20px;
+      padding: 18px;
       border-radius: 14px;
       box-shadow: 0px 4px 14px rgba(0,0,0,0.08);
       transition: 0.3s ease;
+      text-align: center;
+      width: 80%;
     }
 
     .speaker-item:hover {
@@ -47,47 +48,53 @@
     }
 
     .speaker-item img {
-      width: 140px;
-      height: 170px;
+      width: 150px;
+      height: 190px;
       object-fit: cover;
       border-radius: 12px;
       border: 3px solid #0a2e5c;
+      margin-bottom: 12px;
     }
 
+    /* Text Styling */
     .speaker-name {
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       font-weight: 700;
       color: #0a2e5c;
       margin: 0;
-      text-align: left;
     }
 
     .speaker-role {
-      font-size: 1rem;
+      font-size: 0.9rem;
       font-weight: 500;
-      margin-top: 6px;
+      margin-top: 5px;
       color: #444;
-      text-align: left;
     }
 
-    /* Responsive Fix */
-    @media (max-width: 600px) {
+    /* Center leftover last speaker */
+    .speaker-list .speaker-item:nth-child(odd):last-child {
+      grid-column: 1 / -1;
+      width: 50%;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      .speaker-list {
+        grid-template-columns: 1fr;
+      }
+
       .speaker-item {
-        flex-direction: column;
-        text-align: center;
+        width: 90%;
       }
 
-      .speaker-item img {
-        width: 160px;
-        height: 200px;
-      }
-
-      .speaker-name, .speaker-role {
-        text-align: center;
+      .speaker-list .speaker-item:nth-child(odd):last-child {
+        grid-column: auto;
+        width: 90%;
       }
     }
   </style>
 </head>
+
 <body>
 
   <!-- Header -->
@@ -138,67 +145,52 @@
       </div>
     </section>
 
-    <!-- Vertical Speakers Section -->
+    <!-- Speakers Section -->
     <section class="speakers-section container reveal">
-
       <div class="speaker-list">
 
         <div class="speaker-item">
           <img src="assets/Sundar.jpg" alt="Professor Dr. S. Sundar">
-          <div>
-            <h3 class="speaker-name">Professor. Dr. S. Sundar</h3>
-            <p class="speaker-role">Director, NIT Mizoram</p>
-          </div>
+          <h3 class="speaker-name">Professor. Dr. S. Sundar</h3>
+          <p class="speaker-role">Director, NIT Mizoram</p>
         </div>
 
         <div class="speaker-item">
           <img src="assets/Subrahmanyam.jpg" alt="Prof. Dr. V. V. Subrahmanyam">
-          <div>
-            <h3 class="speaker-name">Prof. Dr. V. V. Subrahmanyam</h3>
-            <p class="speaker-role">IGNOU, New Delhi</p>
-          </div>
+          <h3 class="speaker-name">Prof. Dr. V. V. Subrahmanyam</h3>
+          <p class="speaker-role">IGNOU, New Delhi</p>
         </div>
 
         <div class="speaker-item">
           <img src="assets/Venkatesh.jpg" alt="Prof. Dr Venkatesh Chennam Vijay">
-          <div>
-            <h3 class="speaker-name">Prof. Dr. Venkatesh Chennam Vijay</h3>
-            <p class="speaker-role">Birmingham City University, UK</p>
-          </div>
+          <h3 class="speaker-name">Prof. Dr. Venkatesh Chennam Vijay</h3>
+          <p class="speaker-role">Birmingham City University, UK</p>
         </div>
 
         <div class="speaker-item">
           <img src="assets/Balas.jpg" alt="Prof. Dr Balas Valentina Emilia">
-          <div>
-            <h3 class="speaker-name">Prof. Dr. Balas Valentina Emilia</h3>
-            <p class="speaker-role">University of Aurel Vlaicu, Romania</p>
-          </div>
+          <h3 class="speaker-name">Prof. Dr. Balas Valentina Emilia</h3>
+          <p class="speaker-role">University of Aurel Vlaicu, Romania</p>
         </div>
 
-                <div class="speaker-item">
-          <img src="assets/Masilamani.jpg" alt="Prof. Dr Balas Valentina Emilia">
-          <div>
-            <h3 class="speaker-name">Prof. Dr. V. Masilamani</h3>
-            <p class="speaker-role">IIITDM Kancheepuram</p>
-          </div>
+        <div class="speaker-item">
+          <img src="assets/Masilamani.jpg" alt="Prof. Dr. V. Masilamani">
+          <h3 class="speaker-name">Prof. Dr. V. Masilamani</h3>
+          <p class="speaker-role">IIITDM Kancheepuram</p>
         </div>
         
         <div class="speaker-item">
-          <img src="assets/Alok.jpg" alt="Prof. Dr Balas Valentina Emilia">
-          <div>
-            <h3 class="speaker-name">Prof. Alok Kumar Singh Kushwaha</h3>
-            <p class="speaker-role">Guru Ghasidas Vishwavidyalaya (A Central University)</p>
-          </div>
+          <img src="assets/Alok.jpg" alt="Prof. Alok Kumar Singh Kushwaha">
+          <h3 class="speaker-name">Prof. Alok Kumar Singh Kushwaha</h3>
+          <p class="speaker-role">Guru Ghasidas Vishwavidyalaya (A Central University)</p>
         </div>
-        
+
         <div class="speaker-item">
-          <img src="assets/Sanasam.jpg" alt="Prof. Dr Balas Valentina Emilia">
-          <div>
-            <h3 class="speaker-name">Prof.Dr.Sanasam Ranbir Singh</h3>
-            <p class="speaker-role">IIT Guwahati</p>
-          </div>
+          <img src="assets/Sanasam.jpg" alt="Prof.Dr.Sanasam Ranbir Singh">
+          <h3 class="speaker-name">Prof. Dr. Sanasam Ranbir Singh</h3>
+          <p class="speaker-role">IIT Guwahati</p>
         </div>
-        
+
       </div>
     </section>
   </main>
@@ -210,7 +202,6 @@
     </div>
   </footer>
 
-  <!-- Scripts -->
   <script src="script.js"></script>
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
@@ -218,6 +209,3 @@
 
 </body>
 </html>
-
-
-
