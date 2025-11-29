@@ -51,6 +51,10 @@ h1, h2, h3, h4 {
 
 p {
   margin-bottom: 1.5rem;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
 }
 
 a {
@@ -713,6 +717,7 @@ footer .container {
   display: block;
   margin: 0 auto 10px; /* centers image inside the card */
 }
+
 
 
 
