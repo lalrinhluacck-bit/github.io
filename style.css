@@ -1,3 +1,4 @@
+
 /* style.css */
 
 /* --- Google Fonts --- */
@@ -53,7 +54,6 @@ p {
   margin-bottom: 1.5rem;
 }
 
-}
 
 a {
   color: var(--accent-color);
@@ -715,9 +715,4 @@ footer .container {
   display: block;
   margin: 0 auto 10px; /* centers image inside the card */
 }
-
-
-
-
-
 
