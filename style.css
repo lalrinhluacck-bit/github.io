@@ -715,4 +715,7 @@ footer .container {
   display: block;
   margin: 0 auto 10px; /* centers image inside the card */
 }
+s {
+    color: red;
+}
 
