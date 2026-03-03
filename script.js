@@ -24,11 +24,40 @@ document.addEventListener('DOMContentLoaded', () => {
   const hamburger = document.getElementById('hamburger-menu');
   const navbar = document.querySelector('.navbar');
   if (hamburger && navbar) {
-    hamburger.addEventListener('click', () => {
-      navbar.classList.toggle('active');
-      hamburger.classList.toggle('active');
+          hamburger.addEventListener('click', () => {
+          navbar.classList.toggle('active');
+          hamburger.classList.toggle('active');
+
+          // Lock body scroll when menu is open
+          document.body.classList.toggle('menu-open');
+        });
+  }
+  
+// --- Mobile Dropdown Toggle ---
+const dropdowns = document.querySelectorAll('.dropdown');
+
+dropdowns.forEach(dropdown => {
+  const trigger = dropdown.querySelector('.no-click');
+
+  if (trigger) {
+    trigger.addEventListener('click', function (e) {
+
+      if (window.innerWidth <= 768) {
+        e.preventDefault();
+
+        // Close others
+        dropdowns.forEach(item => {
+          if (item !== dropdown) {
+            item.classList.remove('active');
+          }
+        });
+
+        // Toggle this one
+        dropdown.classList.toggle('active');
+      }
     });
   }
+});
 
   // --- Fade-in Animation on Scroll ---
   const revealElements = document.querySelectorAll('.reveal');
