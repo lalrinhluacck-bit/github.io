@@ -732,5 +732,14 @@ color:var(--accent-color);
 .book-link:hover{
 text-decoration:underline;
 }
+body.modal-open {
+  overflow: hidden;
+  overscroll-behavior: none; 
+}
+
+/* Displays the modal when added via JavaScript */
+.book-modal.show-modal {
+  display: flex;
+}
 
 
