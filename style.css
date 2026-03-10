@@ -694,6 +694,8 @@ s {
 
 /* ===== FULL SCREEN IMAGE VIEWER ===== */
 
+/* FULL SCREEN IMAGE VIEWER */
+
 .image-viewer{
 display:none;
 position:fixed;
@@ -703,26 +705,26 @@ width:100%;
 height:100%;
 background:#000;
 z-index:3000;
-overflow:hidden;
+overflow:auto;   /* important for scrolling */
 }
 
 .viewer-container{
-width:100%;
-height:100%;
+min-width:100%;
+min-height:100%;
 display:flex;
 justify-content:center;
-align-items:center;
-cursor:grab;
+align-items:flex-start;  /* allows scrolling downward */
+padding:60px 20px;
 }
 
 .viewer-container img{
-max-width:90%;
-max-height:90%;
+max-width:none;          /* allow zoom beyond screen */
+height:auto;
 transition:transform 0.2s ease;
 }
 
 .viewer-close{
-position:absolute;
+position:fixed;
 top:20px;
 right:40px;
 font-size:40px;
@@ -730,3 +732,4 @@ color:white;
 cursor:pointer;
 z-index:3100;
 }
+
