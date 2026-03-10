@@ -130,13 +130,14 @@ Intelligent Agent Systems for Biomedical Healthcare
 
 <!-- IMAGE MODAL -->
 
-<div id="viewer" class="image-viewer">
-    <span class="viewer-close">&times;</span>
+<div id="bookModal" class="book-modal">
 
-    <div class="viewer-container">
-        <img id="viewerImg">
-    </div>
+<span class="book-close">&times;</span>
+
+<img id="bookModalImg">
+
 </div>
+
 
 
 <footer>
@@ -147,82 +148,38 @@ Intelligent Agent Systems for Biomedical Healthcare
 
 
 <script src="script.js"></script>
+
+
 <script>
-const viewer = document.getElementById("viewer");
-const viewerImg = document.getElementById("viewerImg");
+
 const links = document.querySelectorAll(".book-link");
-const closeBtn = document.querySelector(".viewer-close");
+const modal = document.getElementById("bookModal");
+const modalImg = document.getElementById("bookModalImg");
+const closeBtn = document.querySelector(".book-close");
 
-let scale = 1;
-
-/* OPEN VIEWER */
-
-links.forEach(link => {
-link.addEventListener("click", function(e){
+links.forEach(link=>{
+link.addEventListener("click",function(e){
 
 e.preventDefault();
 
-viewer.style.display = "block";
-viewerImg.src = this.dataset.img;
-
-scale = 1;
-viewerImg.style.transform = "scale(1)";
-
-/* disable background scroll */
-document.body.style.overflow = "hidden";
+modal.style.display="flex";
+modalImg.src=this.dataset.img;
 
 });
 });
 
-
-/* CLOSE VIEWER BUTTON */
-
-closeBtn.onclick = function(){
-
-viewer.style.display = "none";
-document.body.style.overflow = "auto";
-
-};
-
-
-/* CLICK OUTSIDE IMAGE TO CLOSE */
-
-viewer.onclick = function(e){
-
-if(e.target === viewer){
-
-viewer.style.display = "none";
-document.body.style.overflow = "auto";
-
+closeBtn.onclick=function(){
+modal.style.display="none";
 }
 
-};
-
-
-/* ZOOM WITH MOUSE WHEEL */
-
-viewerImg.addEventListener("wheel", function(e){
-
-e.preventDefault();
-
-if(e.deltaY < 0){
-scale += 0.15;
+modal.onclick=function(e){
+if(e.target===modal){
+modal.style.display="none";
 }
-else{
-scale -= 0.15;
 }
 
-if(scale < 1) scale = 1;
-if(scale > 5) scale = 5;
-
-viewerImg.style.transform = "scale(" + scale + ")";
-
-});
 </script>
+
+
 </body>
 </html>
-
-
-
-
-
