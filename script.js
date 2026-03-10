@@ -96,7 +96,7 @@ dropdowns.forEach(dropdown => {
   });
 
 });
-  // --- book ---
+  // --- book pop up ---
 const viewer = document.getElementById("viewer");
   const viewerImg = document.getElementById("viewerImg");
   const links = document.querySelectorAll(".book-link");
@@ -166,3 +166,4 @@ const viewer = document.getElementById("viewer");
   }
 
 });
+
