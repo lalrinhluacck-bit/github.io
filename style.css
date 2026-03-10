@@ -709,12 +709,14 @@ overflow:auto;   /* important for scrolling */
 }
 
 .viewer-container{
-min-width:100%;
-min-height:100%;
-display:flex;
-justify-content:center;
-align-items:flex-start;  /* allows scrolling downward */
-padding:60px 20px;
+max-width:900px;
+max-height:80vh;
+margin:80px auto;
+background:white;
+padding:20px;
+border-radius:10px;
+overflow:auto;
+box-shadow:0 20px 50px rgba(0,0,0,0.4);
 }
 
 .viewer-container img{
@@ -724,7 +726,7 @@ transition:transform 0.2s ease;
 }
 
 .viewer-close{
-position:fixed;
+position:absolute;
 top:20px;
 right:40px;
 font-size:40px;
@@ -732,3 +734,4 @@ color:white;
 cursor:pointer;
 z-index:3100;
 }
+
