@@ -151,36 +151,61 @@ Intelligent Agent Systems for Biomedical Healthcare
 
 <script>
 
+const viewer = document.getElementById("viewer");
+const viewerImg = document.getElementById("viewerImg");
 const links = document.querySelectorAll(".book-link");
-const modal = document.getElementById("bookModal");
-const modalImg = document.getElementById("bookModalImg");
-const closeBtn = document.querySelector(".book-close");
+const closeBtn = document.querySelector(".viewer-close");
+
+let scale = 1;
 
 links.forEach(link=>{
 link.addEventListener("click",function(e){
 
 e.preventDefault();
 
-modal.style.display="flex";
-modalImg.src=this.dataset.img;
+viewer.style.display="block";
+viewerImg.src=this.dataset.img;
+
+scale = 1;
+viewerImg.style.transform="scale(1)";
 
 });
 });
 
 closeBtn.onclick=function(){
-modal.style.display="none";
+viewer.style.display="none";
 }
 
-modal.onclick=function(e){
-if(e.target===modal){
-modal.style.display="none";
+viewer.onclick=function(e){
+if(e.target===viewer){
+viewer.style.display="none";
 }
 }
+
+/* ZOOM with mouse wheel */
+
+viewerImg.addEventListener("wheel",function(e){
+
+e.preventDefault();
+
+if(e.deltaY<0){
+scale+=0.1;
+}else{
+scale-=0.1;
+}
+
+if(scale<1) scale=1;
+if(scale>5) scale=5;
+
+viewerImg.style.transform="scale("+scale+")";
+
+});
 
 </script>
 
 
 </body>
 </html>
+
 
 
