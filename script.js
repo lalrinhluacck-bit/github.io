@@ -96,3 +96,73 @@ dropdowns.forEach(dropdown => {
   });
 
 });
+  // --- book ---
+const viewer = document.getElementById("viewer");
+  const viewerImg = document.getElementById("viewerImg");
+  const links = document.querySelectorAll(".book-link");
+  const closeBtn = document.querySelector(".viewer-close");
+
+  let scale = 1;
+
+  if (viewer && viewerImg && closeBtn) {
+
+    links.forEach(link => {
+
+      link.addEventListener("click", function(e){
+
+        e.preventDefault();
+
+        viewer.style.display = "block";
+        viewerImg.src = this.dataset.img;
+
+        scale = 1;
+        viewerImg.style.transform = "scale(1)";
+
+        document.body.style.overflow = "hidden";
+
+      });
+
+    });
+
+
+    closeBtn.onclick = function(){
+
+      viewer.style.display = "none";
+      document.body.style.overflow = "auto";
+
+    };
+
+
+    viewer.onclick = function(e){
+
+      if(e.target === viewer){
+
+        viewer.style.display = "none";
+        document.body.style.overflow = "auto";
+
+      }
+
+    };
+
+
+    viewerImg.addEventListener("wheel", function(e){
+
+      e.preventDefault();
+
+      if(e.deltaY < 0){
+        scale += 0.15;
+      }
+      else{
+        scale -= 0.15;
+      }
+
+      if(scale < 1) scale = 1;
+      if(scale > 5) scale = 5;
+
+      viewerImg.style.transform = "scale(" + scale + ")";
+
+    });
+
+  }
+
+});
