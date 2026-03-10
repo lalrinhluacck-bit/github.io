@@ -692,45 +692,46 @@ s {
     color: red;
 }
 
-/* ===== FULL SCREEN IMAGE VIEWER ===== */
 
-/* FULL SCREEN IMAGE VIEWER */
+/* ---------- BOOK IMAGE MODAL ---------- */
 
-.image-viewer{
+.book-modal{
 display:none;
 position:fixed;
 top:0;
 left:0;
 width:100%;
 height:100%;
-background:#000;
-z-index:3000;
-overflow-y:auto;
-overflow-x:hidden;  /* important for scrolling */
-}
-
-.viewer-container{
-max-width:900px;
-margin:80px auto;
-display:flex;
+background:rgba(0,0,0,0.85);
+z-index:2000;
 justify-content:center;
-align-items:flex-start;
+align-items:center;
 }
 
-.viewer-container img{
-max-width:none;          /* allow zoom beyond screen */
-height:auto;
-transition:transform 0.2s ease;
+.book-modal img{
+max-width:80%;
+max-height:85%;
+border-radius:8px;
+box-shadow:0 10px 40px rgba(0,0,0,0.5);
 }
 
-.viewer-close{
+.book-close{
 position:absolute;
-top:20px;
+top:30px;
 right:40px;
 font-size:40px;
 color:white;
 cursor:pointer;
-z-index:3100;
 }
+
+.book-link{
+font-weight:600;
+color:var(--accent-color);
+}
+
+.book-link:hover{
+text-decoration:underline;
+}
+
 
 
