@@ -1,175 +1,321 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Registration — iCONNECT 2026</title>
-    <link rel="stylesheet" href="style.css" />
-    <style>
-        /* ===== Registration Page Styling ===== */
-        .styled-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 30px 0;
-            font-size: 1rem;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        .styled-table thead tr {
-            background-color: var(--primary-color, #004aad);
-            color: #fff;
-            text-align: center;
-            font-weight: bold;
-        }
+<title>Registration — iCONNECT 2026</title>
 
-        .styled-table th,
-        .styled-table td {
-            padding: 12px 16px;
-            border: 1px solid #ddd;
-            text-align: center;
-        }
+<link rel="stylesheet" href="style.css">
 
-        .styled-table tbody tr:nth-child(even) {
-            background-color: #f8f9fa;
-        }
+<style>
 
-        .account-section {
-            background: #f9f9f9;
-            border-radius: 10px;
-            padding: 25px;
-            margin-top: 40px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-        }
+/* ===== Registration Page ===== */
 
-        .account-section h2 {
-            font-size: 1.4rem;
-            margin-bottom: 15px;
-            color: var(--primary-color, #222);
-        }
+.registration-container{
+max-width:1100px;
+margin:40px auto;
+padding:0 20px;
+font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+line-height:1.6;
+text-align:left;
+}
 
-        .account-section p {
-            margin: 6px 0;
-            font-size: 1rem;
-            color: #333;
-        }
+.registration-intro{
+font-size:1.05rem;
+margin-bottom:30px;
+color:#444;
+}
 
-        .account-section strong {
-            color: #000;
-        }
+/* Step Cards */
 
-        @media (max-width: 600px) {
-            .styled-table th, .styled-table td {
-                font-size: 0.9rem;
-                padding: 10px;
-            }
-        }
-    </style>
+.step-card{
+background:white;
+padding:25px;
+margin-bottom:25px;
+border-radius:10px;
+box-shadow:0 4px 12px rgba(0,0,0,0.08);
+border-left:5px solid #004aad;
+}
+
+.step-card h3{
+color:#004aad;
+margin-bottom:15px;
+}
+
+/* Table */
+
+.styled-table{
+width:100%;
+border-collapse:collapse;
+margin-top:15px;
+font-size:0.95rem;
+}
+
+.styled-table thead{
+background:#004aad;
+color:white;
+}
+
+.styled-table th,
+.styled-table td{
+text-align:left;
+padding:12px;
+border:1px solid #ddd;
+}
+
+.styled-table tbody tr:nth-child(even){
+background:#f7f9fc;
+}
+
+/* Lists */
+
+.clean-list{
+margin-top:10px;
+padding-left:20px;
+}
+
+.clean-list li{
+margin:6px 0;
+}
+
+/* Button */
+
+.form-link{
+display:inline-block;
+margin-top:10px;
+padding:10px 18px;
+background:#004aad;
+color:white;
+border-radius:6px;
+text-decoration:none;
+font-weight:500;
+}
+
+.form-link:hover{
+background:#003580;
+}
+
+</style>
+
 </head>
+
 <body>
 
-    <header class="top-header">
-        <div class="container header-container">
-            <div class="logo"><a href="index.html"><img src="assets/logo.png" alt="Conference Logo"></a></div>
-                <nav class="navbar">
-                    <ul class="menu">
-                    <li><a href="index.html">Home</a></li>
 
-                    <!-- Dropdown for Committee -->
-                    <li class="dropdown">
-                        <a href="#" class="no-click">Committee</a>
-                        <ul class="dropdown-menu">
-                          <li><a href="OC.html">Organizing Committee</a></li>
-                          <li><a href="technical.html">Technical Programme Committee</a></li>
-                          <li><a href="international.html">International Committee</a></li>
-                          <li><a href="national.html">National Committee</a></li>
-                          <li><a href="Others.html">Other Committee</a></li>
-                        </ul>
-                    </li>
-            
-                    <li><a href="speaker.html">Speaker</a></li>
+<header class="top-header">
+<div class="container header-container">
 
-                    <li class="dropdown">
-                      <a href="#" class="no-click">Authors</a>
-                      <ul class="dropdown-menu">
-                        <li><a href="paper.html">Call For Paper</a></li>
-                        <li><a href="submission.html">Paper Submission</a></li>
-                      </ul>
-                    </li>
-                    <li><a href="dates.html">Important Dates</a></li>
-                    <li><a href="register.html">Register</a></li>
-                    <li><a href="publication.html">Publication</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </nav>
-            <button class="hamburger" id="hamburger-menu" aria-label="Open Menu"><span></span><span></span><span></span></button>
-        </div>
-    </header>
+<div class="logo">
+<a href="index.html">
+<img src="assets/logo.png" alt="Conference Logo">
+</a>
+</div>
 
-    <main>
-        <section class="page-header">
-            <div class="container">
-                <h1 class="reveal">Registration</h1>
-            </div>
-        </section>
+<nav class="navbar">
 
-        <section class="container reveal">
-            <div class="section-title">
-                <h2>Registration Fees</h2>
-            </div>
+<ul class="menu">
 
-            <table class="styled-table">
-                <thead>
-                    <tr>
-                        <th>Category</th>
-                        <th>Indian Author</th>
-                        <th>Foreign Author</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Student Member</td>
-                        <td>₹2500</td>
-                        <td>$40</td>
-                    </tr>
-                    <tr>
-                        <td>Academician Member</td>
-                        <td>₹3000</td>
-                        <td>$50</td>
-                    </tr>
-                    <tr>
-                        <td>Delegates</td>
-                        <td>₹1000</td>
-                        <td>$15</td>
-                    </tr>
-                </tbody>
-            </table>
+<li><a href="index.html">Home</a></li>
 
-            <div class="account-section">
-                <h2>Account Details</h2>
-                <p>The fee is to be paid through <strong>NEFT/RTGS</strong> to the following account:</p>
-                <p><strong>Account Number:</strong> 1548050001137</p>
-                <p><strong>Bank:</strong> Punjab National Bank</p>
-                <p><strong>Branch:</strong> Mizoram University (Aizawl)</p>
-                <p><strong>IFSC Code:</strong> PUNB0154820</p>
-            </div>
-        </section>
-    </main>
+<li class="dropdown">
+<a href="#" class="no-click">Committee</a>
+<ul class="dropdown-menu">
+<li><a href="OC.html">Organizing Committee</a></li>
+<li><a href="technical.html">Technical Programme Committee</a></li>
+<li><a href="international.html">International Committee</a></li>
+<li><a href="national.html">National Committee</a></li>
+<li><a href="Others.html">Other Committee</a></li>
+</ul>
+</li>
+
+<li><a href="speaker.html">Speaker</a></li>
+
+<li class="dropdown">
+<a href="#" class="no-click">Authors</a>
+<ul class="dropdown-menu">
+<li><a href="paper.html">Call For Paper</a></li>
+<li><a href="submission.html">Paper Submission</a></li>
+</ul>
+</li>
+
+<li><a href="dates.html">Important Dates</a></li>
+<li><a href="register.html">Register</a></li>
+<li><a href="publication.html">Publication</a></li>
+<li><a href="contact.html">Contact</a></li>
+
+</ul>
+
+</nav>
+
+<button class="hamburger" id="hamburger-menu" aria-label="Open Menu">
+<span></span>
+<span></span>
+<span></span>
+</button>
+
+</div>
+</header>
+
+
+
+<main>
+
+<section class="page-header">
+<div class="container">
+<h1>Registration</h1>
+</div>
+</section>
+
+
+<section class="registration-container">
+
+<h2>REGISTRATION</h2>
+
+<p class="registration-intro">
+Once your paper is accepted, the registration process begins.
+Authors must complete the following steps.
+</p>
+
+
+<!-- STEP 1 -->
+
+<div class="step-card">
+
+<h3>STEP 1 : PAYMENT</h3>
+
+<h4>Registration Fees</h4>
+
+<table class="styled-table">
+
+<thead>
+<tr>
+<th>Category</th>
+<th>Indian Author</th>
+<th>Foreign Author</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td>Student Member</td>
+<td>₹2500</td>
+<td>$40</td>
+</tr>
+
+<tr>
+<td>Academician Member</td>
+<td>₹3000</td>
+<td>$50</td>
+</tr>
+
+<tr>
+<td>Delegates</td>
+<td>₹1000</td>
+<td>$15</td>
+</tr>
+
+</tbody>
+
+</table>
+
+
+<h4 style="margin-top:20px;">Account Details</h4>
+
+<p>The registration fee should be paid through <b>NEFT / RTGS</b> to the following account:</p>
+
+<ul class="clean-list">
+
+<li><b>Account Number:</b> 1548050001137</li>
+
+<li><b>Bank:</b> Punjab National Bank</li>
+
+<li><b>Branch:</b> Mizoram University (Aizawl)</li>
+
+<li><b>IFSC Code:</b> PUNB0154820</li>
+
+</ul>
+
+</div>
+
+
+
+<!-- STEP 2 -->
+
+<div class="step-card">
+
+<h3>STEP 2 : PREPARE DOCUMENTS</h3>
+
+<p>Download and prepare the following documents:</p>
+
+<ul class="clean-list">
+
+<li>Manuscript Format:
+<a href="assets/iCONNECT_Article_Template_Sept1_2023.docx" download>Download Template</a>
+</li>
+
+<li>Copyright Form:
+<a href="assets/iCONNECT_Copyright_form.pdf" download>Download Copyright Form</a>
+</li>
+
+</ul>
+
+<p>
+Prepare the <b>Camera Ready Paper</b> using the provided manuscript template.
+</p>
+
+</div>
+
+
+
+<!-- STEP 3 -->
+
+<div class="step-card">
+
+<h3>STEP 3 : SUBMIT THROUGH GOOGLE FORM</h3>
+
+<p>Upload the following documents through the Google Form.</p>
+
+<p><b>List of Attachments</b></p>
+
+<ol class="clean-list">
+
+<li>Camera Ready Paper (in prescribed manuscript format)</li>
+
+<li>Scanned Copyright Form (duly signed)</li>
+
+<li>Payment Proof</li>
+
+</ol>
+
+<a href="https://forms.gle/GXzzBEUoW59QyYNz9" target="_blank" class="form-link">
+Open Google Form
+</a>
+
+</div>
+
+
+</section>
+
+</main>
+
+
 
 <footer>
-  <div class="container">
-    <p>&copy; <span id="year"></span> iCONNECT 2026 | All rights reserved</p>
-  </div>
+<div class="container">
+<p>&copy; <span id="year"></span> iCONNECT 2026 | All rights reserved</p>
+</div>
 </footer>
 
-    <script src="script.js"></script>
-    <script>
-        // Auto year
-        document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
+
+
+<script src="script.js"></script>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
 </body>
 </html>
-
-
-
-
